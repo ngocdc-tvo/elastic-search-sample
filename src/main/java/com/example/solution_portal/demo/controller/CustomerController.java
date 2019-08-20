@@ -16,10 +16,9 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @PostMapping("/save-customer")
-    public int saveCustomer(@RequestBody List<CustomerEntity> customers) {
-        customerService.saveAll(customers);
-        return customers.size();
+    @PostMapping("/save")
+    public Integer saveCustomer(@RequestBody List<CustomerEntity> customers) {
+        return customerService.saveAll(customers);
     }
 
     @GetMapping("/find-all")
@@ -27,8 +26,8 @@ public class CustomerController {
         return customerService.findAll();
     }
 
-    @GetMapping("/find-by-first-name/{first-name}")
-    public List<CustomerEntity> findByFirstName(@PathVariable String firstName) {
+    @GetMapping("/find-by-first-name")
+    public List<CustomerEntity> findByFirstName(@RequestParam("first_name") String firstName) {
         return customerService.findByFirstname(firstName);
     }
 

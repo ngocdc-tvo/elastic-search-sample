@@ -9,7 +9,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.io.Serializable;
 
-@Document(indexName = "sampleIndex", type = "customer")
+@Document(indexName = "customer-index", type = "customer")
 @Setter
 @Getter
 @NoArgsConstructor
